@@ -1,123 +1,112 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prontuário Eletrônico / Consulta Domiciliar</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prontuário Eletrônico</title>
+  <link rel="manifest" href="manifest.webmanifest"/>
   <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(to right, #f0f9ff, #cbebff);
-      margin: 0;
-      padding: 0;
-      transition: background 0.3s ease;
-    }
-    .container {
-      max-width: 800px;
-      margin: 30px auto;
-      background: #ffffff;
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      border: 1px solid #d0eaff;
-    }
-    h1 {
-      text-align: center;
-      color: #0077b6;
-      font-size: 28px;
-      letter-spacing: 1px;
-      margin-bottom: 25px;
-    }
-    label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
-      color: #333;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      box-sizing: border-box;
-      font-size: 14px;
-    }
-    textarea {
-      resize: vertical;
-    }
-    button {
-      margin-top: 20px;
-      padding: 12px 24px;
-      background: linear-gradient(to right, #00b894, #00cec9);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
-      font-size: 14px;
-      transition: background 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-    button:hover {
-      background: linear-gradient(to right, #00cec9, #00b894);
-    }
-    .entry {
-      background: #ecf0f1;
-      padding: 12px;
-      margin-top: 12px;
-      border-radius: 8px;
-      font-size: 14px;
-      border-left: 5px solid #00b894;
-    }
-    .dark-mode {
-      background: #121212;
-      color: #e0e0e0;
-    }
-    .dark-mode .container {
-      background: #1e1e1e;
-      border-color: #333;
-    }
-    .dark-mode input,
-    .dark-mode textarea {
-      background: #2c2c2c;
-      color: #fff;
-      border: 1px solid #444;
-    }
-    .toggle-dark {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: #222;
-      color: #fff;
-      padding: 10px;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-    @media (max-width: 600px) {
-      .container {
-        margin: 10px;
-        padding: 15px;
-      }
-    }
+    body { font-family: sans-serif; background: #eef9ff; margin: 0; padding: 1rem; }
+    .container { max-width: 600px; margin: auto; background: white; padding: 1rem; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    label { display: block; margin-top: 1rem; font-weight: bold; }
+    input, textarea { width: 100%; padding: 0.5rem; margin-top: 0.25rem; }
+    button { margin-top: 1rem; padding: 0.75rem; background: #0077b6; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #0096c7; }
   </style>
 </head>
 <body>
-  <button class="toggle-dark material-icons" onclick="toggleDarkMode()">brightness_6</button>
   <div class="container">
-    <h1><span class="material-icons" style="vertical-align: middle; font-size: 30px;">assignment</span> Prontuário Eletrônico / Consulta Domiciliar</h1>
-    <!-- Campos do formulário viriam aqui (removidos para brevidade) -->
-    <p style="text-align:center; color:gray;">Versão visual demonstrativa carregada com sucesso.</p>
+    <h1>Consulta Domiciliar</h1>
+    <label for="nome">Nome</label>
+    <input type="text" id="nome" required>
+    <label for="cpf">CPF</label>
+    <input type="text" id="cpf">
+    <label for="nascimento">Nascimento</label>
+    <input type="date" id="nascimento">
+    <label for="data_consulta">Data da Consulta</label>
+    <input type="date" id="data_consulta">
+    <label for="cid">CID</label>
+    <input type="text" id="cid">
+    <label for="endereco">Endereço</label>
+    <input type="text" id="endereco">
+    <label for="telefone">Telefone</label>
+    <input type="text" id="telefone">
+    <label for="email">Email</label>
+    <input type="email" id="email">
+    <label for="pressao">Pressão</label>
+    <input type="text" id="pressao">
+    <label for="fc">Frequência Cardíaca</label>
+    <input type="text" id="fc">
+    <label for="spo2">SpO2</label>
+    <input type="text" id="spo2">
+    <label for="circ_abd">Circ. Abdominal</label>
+    <input type="text" id="circ_abd">
+    <label for="circ_pant">Circ. Panturrilha</label>
+    <input type="text" id="circ_pant">
+    <label for="glicemia">Glicemia</label>
+    <input type="text" id="glicemia">
+    <label for="altura">Altura (m)</label>
+    <input type="text" id="altura">
+    <label for="peso">Peso (kg)</label>
+    <input type="text" id="peso">
+    <label for="imc">IMC</label>
+    <input type="text" id="imc" readonly>
+    <label for="acompanhamento">Acompanhamento</label>
+    <textarea id="acompanhamento"></textarea>
+    <button onclick="salvarEEnviar()">Salvar e Enviar</button>
+    <p id="status"></p>
   </div>
+
   <script>
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark-mode');
+    const endpoint = "https://script.google.com/macros/s/AKfycbzZRijSZa6XgMi_C4pHlKMIUc0oNmK2NKo3iNe9ensZlxUuXIxezfORCEb6Aw0yOjzq/exec";
+
+    function calcularIMC() {
+      const peso = parseFloat(document.getElementById('peso').value.replace(',', '.'));
+      const altura = parseFloat(document.getElementById('altura').value.replace(',', '.'));
+      if (!isNaN(peso) && !isNaN(altura) && altura > 0) {
+        const imc = peso / (altura * altura);
+        document.getElementById('imc').value = imc.toFixed(1);
+      } else {
+        document.getElementById('imc').value = "";
+      }
+    }
+
+    document.getElementById('peso').addEventListener('input', calcularIMC);
+    document.getElementById('altura').addEventListener('input', calcularIMC);
+
+    function salvarEEnviar() {
+      const dados = {
+        nome: document.getElementById('nome').value,
+        cpf: document.getElementById('cpf').value,
+        nascimento: document.getElementById('nascimento').value,
+        data_consulta: document.getElementById('data_consulta').value,
+        cid: document.getElementById('cid').value,
+        endereco: document.getElementById('endereco').value,
+        telefone: document.getElementById('telefone').value,
+        email: document.getElementById('email').value,
+        pressao: document.getElementById('pressao').value,
+        fc: document.getElementById('fc').value,
+        spo2: document.getElementById('spo2').value,
+        circ_abd: document.getElementById('circ_abd').value,
+        circ_pant: document.getElementById('circ_pant').value,
+        glicemia: document.getElementById('glicemia').value,
+        altura: document.getElementById('altura').value,
+        peso: document.getElementById('peso').value,
+        acompanhamento: document.getElementById('acompanhamento').value
+      };
+
+      fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(dados)
+      })
+      .then(response => {
+        document.getElementById('status').innerText = "✅ Enviado com sucesso!";
+      })
+      .catch(error => {
+        console.error(error);
+        document.getElementById('status').innerText = "❌ Erro ao enviar.";
+      });
     }
   </script>
 </body>
